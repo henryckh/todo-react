@@ -1,33 +1,54 @@
-# TodoReact 
+# TodoReact
+
 A simple Todo List application with React-Redux.
 
 ## Table of Contents
 
 - [Background](#background)
+- [Prerequisites](#prerequisites)
 - [Install](#install)
 - [Usage](#usage)
 
 ## Background
 
-Project build from scratch using create-react-app. 
+Todo App build from scratch using create-react-app using [YARN](https://classic.yarnpkg.com/en/docs/install/#mac-stable) as package managers. Please `AVOID` using npm install else there will be dependency error.
 
-## Install 
+## Prerequisites
 
-The development of this project uses node v12.18.1 and npm v6.70. It's suggested to have node >= 14 and npm >= 5.2 locally installed.
+The development of this project uses node v12.18.1 and npm v6.70. It's suggested to have node >= 14 and npm >= 5.2 and yarn 1.1.22.10 locally installed. Please make sure you have the yarn installed, it should have shipped with nodejs by default.
+
+To check if yarn installed
 
 ```sh
-npm install
+yarn --version
+```
+
+To install yarn via npm
+
+```sh
+npm install -g yarn
+```
+
+## Install
+
+To intall the dependencies
+
+```sh
+yarn install
 ```
 
 ## Usage
 
-### Development or run in local 
+### Development or run in local
+
 ```sh
-npm run start
+yarn run start
 ```
+
 You can view the application on http://localhost:3000
 
 ### Build for production
+
 ```sh
-npm run build
+yarn run build
 ```
