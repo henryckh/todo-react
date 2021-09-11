@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import Todo from "./Todo";
+import TodoItem from "./TodoItem";
 import styled from "styled-components";
 
 const TodoListWrapper = styled.div`
@@ -18,7 +18,11 @@ const TodoList = ({ todos, fetchTodo, onTodoClick }) => {
   return (
     <TodoListWrapper>
       {todos.map((todo) => (
-        <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
+        <TodoItem
+          key={todo.id}
+          {...todo}
+          onClick={() => onTodoClick(todo.id)}
+        />
       ))}
     </TodoListWrapper>
   );
@@ -27,7 +31,7 @@ const TodoList = ({ todos, fetchTodo, onTodoClick }) => {
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       text: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
     }).isRequired
