@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import TodoList from "../components/TodoList";
-import { toggleTodo } from "../actions";
+import { toggleTodo, fetchTodo } from "../actions";
 import {
   FILTER_TODO_ALL,
   FILTER_TODO_ACTIVE,
@@ -30,6 +30,7 @@ const TodoListPage = connect(
     onTodoClick: (id) => {
       dispatch(toggleTodo(id));
     },
+    fetchTodo: () => dispatch(fetchTodo()),
   })
 )(TodoList);
 
