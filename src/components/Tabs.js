@@ -11,7 +11,8 @@ const Tab = styled.div`
   flex-grow: 1;
   text-align: center;
   cursor: pointer;
-  background: ${(props) => (!props.focused ? "#ccc" : "#007c91")};
+  background: ${(props) => (props.focused ? "#707070" : "#aeaeae")};
+  color: white;
   padding: 8px;
   border: 1px solid white;
 `;
@@ -35,6 +36,7 @@ const Tabs = ({ todoFilter, setTodoFilter }) => {
     <TabWrapper>
       {tabs.map((tab) => (
         <Tab
+          key={tab.text}
           focused={todoFilter === tab.filter ? true : false}
           onClick={() => setTodoFilter(tab.filter)}
         >

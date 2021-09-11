@@ -9,6 +9,7 @@ import FilterTabs from "../containers/FilterTabs";
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Quicksand", sans-serif;
+    background: #555;
   }
 `;
 
@@ -17,7 +18,7 @@ const AppWrapper = styled.div`
   padding: 24px 32px 36px 32px;
   max-width: 380px;
   min-height: 600px;
-  background: #007c91;
+  background: #e0e0e0;
   border-radius: 12px;
   color: white;
 `;

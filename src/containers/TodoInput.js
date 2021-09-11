@@ -28,8 +28,8 @@ const AddButton = styled.button`
   flex-grow: 1;
   cursor: pointer;
   text-align: center;
-  background: transparent;
-  color: white;
+  background: #e0e0e0;
+  color: black;
   padding: 8px;
   border: none;
   border: 1px solid white;
@@ -37,7 +37,7 @@ const AddButton = styled.button`
   margin: 0 8px;
   &:hover {
     background: white;
-    color: #007c91;
+    color: black;
   }
 `;
 
