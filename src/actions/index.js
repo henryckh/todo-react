@@ -15,7 +15,7 @@ export const fetchTodo = () => async (dispatch) => {
 export const addMultiTodo = (todos) => ({
   type: types.ADD_MULTI_TODO,
   data: todos.map((todo) => ({
-    id: todo.id,
+    id: todo.id.toString(),
     text: todo.title,
   })),
 });

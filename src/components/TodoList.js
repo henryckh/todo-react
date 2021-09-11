@@ -31,7 +31,7 @@ const TodoList = ({ todos, fetchTodo, onTodoClick }) => {
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
     }).isRequired

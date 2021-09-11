@@ -40,6 +40,8 @@ const Todo = ({ text, completed, onClick }) => (
 
 Todo.prototype = {
   text: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Todo;

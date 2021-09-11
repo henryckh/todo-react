@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import * as filters from "../constants/FilterTypes";
 
 const TabWrapper = styled.div`
@@ -45,6 +46,11 @@ const Tabs = ({ todoFilter, setTodoFilter }) => {
       ))}
     </TabWrapper>
   );
+};
+
+Tabs.prototype = {
+  todoFilter: PropTypes.string.isRequired,
+  setTodoFilter: PropTypes.func.isRequired,
 };
 
 export default Tabs;
