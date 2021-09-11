@@ -8,7 +8,7 @@ const TodoWrappper = styled.div`
   padding: 16px 32px;
   justify-content: space-between;
   align-items: center;
-  background: #00acc1;
+  background: #26c6da;
   color: black;
   cursor: pointer;
   text-decoration: ${(props) => (props.completed ? "line-through" : "none")};

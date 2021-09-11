@@ -1,13 +1,17 @@
-import * as types from "../actions/Types";
+import * as types from "../constants/ActionTypes";
 
-const todo = (action) => {
+const todo = (state, action) => {
   switch (action.type) {
     case types.ADD_TODO:
-      // console.log(action);
       return {
         id: action.id,
         text: action.text,
         completed: false,
+      };
+    case types.TOGGLE_TODO:
+      return {
+        ...state,
+        completed: !state.completed,
       };
   }
 };
@@ -15,8 +19,14 @@ const todo = (action) => {
 const todos = (state = [], action) => {
   switch (action.type) {
     case types.ADD_TODO:
-      console.log([...state, todo(action)]);
-      return [...state, todo(action)];
+      return [...state, todo(null, action)];
+    case types.TOGGLE_TODO:
+      return state.map((item) => {
+        if (item.id === action.id) {
+          return todo(item, action);
+        }
+        return item;
+      });
     default:
       return state;
   }

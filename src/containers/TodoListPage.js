@@ -1,10 +1,36 @@
 import { connect } from "react-redux";
 import TodoList from "../components/TodoList";
+import { toggleTodo } from "../actions";
+import {
+  FILTER_TODO_ALL,
+  FILTER_TODO_ACTIVE,
+  FILTER_TODO_COMPLETED,
+} from "../constants/FilterTypes";
 
-const mapStateToProps = (state) => ({
-  todos: state.todos,
-});
+const TodoListPage = connect(
+  (state) => {
+    let filteredTodos;
+    switch (state.todoFilter) {
+      case FILTER_TODO_ALL:
+        filteredTodos = state.todos;
+        break;
+      case FILTER_TODO_COMPLETED:
+        filteredTodos = state.todos.filter((t) => t.completed);
+        break;
+      case FILTER_TODO_ACTIVE:
+        filteredTodos = state.todos.filter((t) => !t.completed);
+        break;
+    }
 
-const TodoListPage = connect(mapStateToProps)(TodoList);
+    return {
+      todos: filteredTodos,
+    };
+  },
+  (dispatch) => ({
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id));
+    },
+  })
+)(TodoList);
 
 export default TodoListPage;
