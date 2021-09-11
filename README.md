@@ -31,7 +31,7 @@ npm install -g yarn
 
 ## Install
 
-To intall the dependencies
+To install the dependencies, or if you experienced `dependency issue`, please remove node_modules and run below command again
 
 ```sh
 yarn install
