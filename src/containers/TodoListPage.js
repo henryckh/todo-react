@@ -20,6 +20,8 @@ const TodoListPage = connect(
       case FILTER_TODO_ACTIVE:
         filteredTodos = state.todos.filter((t) => !t.completed);
         break;
+      default:
+        filteredTodos = state.todos;
     }
 
     return {
