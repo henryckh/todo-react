@@ -1,13 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Todo from "./Todo";
+import styled from "styled-components";
+
+const TodoListWrapper = styled.div`
+  background: #f0f0f0;
+  height: 500px;
+  overflow-y: scroll;
+  padding-top: 12px;
+`;
 
 const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
+  <TodoListWrapper>
     {todos.map((todo) => (
       <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
     ))}
-  </ul>
+  </TodoListWrapper>
 );
 
 TodoList.propTypes = {

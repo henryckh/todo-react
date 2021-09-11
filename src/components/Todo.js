@@ -1,7 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
-const Todo = ({ text, onClick }) => <div onClick={onClick}>{text}</div>;
+const TodoWrappper = styled.div`
+  display: flex;
+  margin: 8px 16px;
+  padding: 16px 32px;
+  justify-content: space-between;
+  align-items: center;
+  background: #00acc1;
+  color: black;
+  cursor: pointer;
+  text-decoration: ${(props) => (props.completed ? "line-through" : "none")};
+`;
+
+const Todo = ({ text, completed, onClick }) => (
+  <TodoWrappper completed={completed} onClick={onClick}>
+    {text}
+  </TodoWrappper>
+);
 
 Todo.prototype = {
   text: PropTypes.string.isRequired,

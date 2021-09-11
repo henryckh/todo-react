@@ -1,5 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 
-const Header = () => <div>This is the header</div>;
+const HeaderWrapper = styled.div`
+  font-size: 32px;
+  letter-spacing: 0.05rem;
+  .span {
+    margin-bottom: 12px;
+  }
+`;
+
+const Header = () => <HeaderWrapper>Todo List</HeaderWrapper>;
 
 export default Header;
