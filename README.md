@@ -1,6 +1,6 @@
 # TodoReact
 
-A simple Todo List application with React-Redux.
+A simple Todo List application with React-Redux. Check the [DEMO](https://henryckh.github.io/todo-react/) here.
 
 ## Table of Contents
 
