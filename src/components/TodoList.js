@@ -8,6 +8,9 @@ const TodoListWrapper = styled.div`
   height: 500px;
   overflow-y: scroll;
   padding-top: 8px;
+  @media only screen and (max-width: 600px) {
+    height: calc(100vh - 210px);
+  }
 `;
 
 const TodoList = ({ todos, fetchTodo, onTodoClick, onDeleteClick }) => {

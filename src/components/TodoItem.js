@@ -22,8 +22,7 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
 
 const DeleteButton = styled.div`
   cursor: pointer;
-  align-items: flex-end;
-  align-self: flex-end;
+  align-self: center;
   padding: 12px 16px;
 `;
 
@@ -40,6 +39,9 @@ const TodoWrappper = styled.div`
   background: #cfcfcf;
   color: black;
   cursor: pointer;
+  @media only screen and (max-width: 600px) {
+    padding: 8px;
+  }
 `;
 
 const Todo = ({ text, completed, onTodoClick, onDeleteClick }) => (

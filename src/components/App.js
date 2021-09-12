@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Quicksand", sans-serif;
     background: #555;
+    margin: 8px;
   }
 `;
 
@@ -21,6 +22,11 @@ const AppWrapper = styled.div`
   background: #e0e0e0;
   border-radius: 12px;
   color: white;
+  @media only screen and (max-width: 600px) {
+    margin: 0px auto;
+    padding: 24px 32px 24px 32px;
+    min-height: unset;
+  }
 `;
 
 const App = () => (
