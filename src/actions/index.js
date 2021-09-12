@@ -20,6 +20,11 @@ export const addMultiTodo = (todos) => ({
   })),
 });
 
+export const deleteTodo = (id) => ({
+  type: types.DELETE_TODO,
+  id,
+});
+
 export const addTodo = (text) => ({
   type: types.ADD_TODO,
   id: uuidv4(),

@@ -1,13 +1,13 @@
 import { connect } from "react-redux";
 import TodoList from "../components/TodoList";
-import { toggleTodo, fetchTodo } from "../actions";
+import { toggleTodo, deleteTodo, fetchTodo } from "../actions";
 import {
   FILTER_TODO_ALL,
   FILTER_TODO_ACTIVE,
   FILTER_TODO_COMPLETED,
 } from "../constants/FilterTypes";
 
-const TodoListPage = connect(
+const FilterToList = connect(
   (state) => {
     let filteredTodos;
     switch (state.todoFilter) {
@@ -29,11 +29,10 @@ const TodoListPage = connect(
     };
   },
   (dispatch) => ({
-    onTodoClick: (id) => {
-      dispatch(toggleTodo(id));
-    },
     fetchTodo: () => dispatch(fetchTodo()),
+    onTodoClick: (id) => dispatch(toggleTodo(id)),
+    onDeleteClick: (id) => dispatch(deleteTodo(id)),
   })
 )(TodoList);
 
-export default TodoListPage;
+export default FilterToList;

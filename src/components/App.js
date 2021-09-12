@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import AddTodo from "../containers/TodoInput";
-import TodoListPage from "../containers/TodoListPage";
+import FilterTodoList from "../containers/FilterTodoList";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import FilterTabs from "../containers/FilterTabs";
@@ -29,7 +29,7 @@ const App = () => (
     <Header />
     <AddTodo />
     <FilterTabs />
-    <TodoListPage />
+    <FilterTodoList />
   </AppWrapper>
 );
 

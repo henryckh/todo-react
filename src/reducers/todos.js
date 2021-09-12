@@ -29,6 +29,8 @@ const todos = (state = [], action) => {
       return [...state, ...temp];
     case types.ADD_TODO:
       return [...state, todo(null, action)];
+    case types.DELETE_TODO:
+      return state.filter((item) => item.id !== action.id);
     case types.TOGGLE_TODO:
       return state.map((item) => {
         if (item.id === action.id) {

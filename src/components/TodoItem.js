@@ -20,6 +20,18 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
   }
 `;
 
+const DeleteButton = styled.div`
+  cursor: pointer;
+  align-items: flex-end;
+  align-self: flex-end;
+  padding: 12px 16px;
+`;
+
+const TodoText = styled.div`
+  flex-grow: 1;
+  text-decoration: ${(props) => (props.completed ? "line-through" : "none")};
+`;
+
 const TodoWrappper = styled.div`
   display: flex;
   margin: 8px 16px;
@@ -28,13 +40,13 @@ const TodoWrappper = styled.div`
   background: #cfcfcf;
   color: black;
   cursor: pointer;
-  text-decoration: ${(props) => (props.completed ? "line-through" : "none")};
 `;
 
-const Todo = ({ text, completed, onClick }) => (
-  <TodoWrappper completed={completed} onClick={onClick}>
+const Todo = ({ text, completed, onTodoClick, onDeleteClick }) => (
+  <TodoWrappper onClick={onTodoClick}>
     <Checkbox checked={completed} onChange={(e) => {}} />
-    {text}
+    <TodoText completed={completed}>{text}</TodoText>
+    <DeleteButton onClick={onDeleteClick}>&times;</DeleteButton>
   </TodoWrappper>
 );
 

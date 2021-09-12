@@ -10,7 +10,7 @@ const TodoListWrapper = styled.div`
   padding-top: 8px;
 `;
 
-const TodoList = ({ todos, fetchTodo, onTodoClick }) => {
+const TodoList = ({ todos, fetchTodo, onTodoClick, onDeleteClick }) => {
   useEffect(() => {
     fetchTodo();
   }, []);
@@ -21,7 +21,8 @@ const TodoList = ({ todos, fetchTodo, onTodoClick }) => {
         <TodoItem
           key={todo.id}
           {...todo}
-          onClick={() => onTodoClick(todo.id)}
+          onTodoClick={() => onTodoClick(todo.id)}
+          onDeleteClick={() => onDeleteClick(todo.id)}
         />
       ))}
     </TodoListWrapper>
