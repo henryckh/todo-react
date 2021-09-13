@@ -2,6 +2,9 @@
 
 A simple Todo List application with React-Redux. Check the [DEMO](https://henryckh.github.io/todo-react/) here.
 
+![Screenshot 2021-09-12 at 7 02 03 PM](https://user-images.githubusercontent.com/11421035/132985066-87b773e5-318f-4e46-a7fd-5d0b53ea63a6.png)
+
+
 ## Table of Contents
 
 - [Background](#background)
